@@ -1,0 +1,68 @@
+package cred;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Properties;
+
+public class FetchData {
+	public static void main(String[] args) throws IOException {
+		try {
+			Class.forName("org.postgresql.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+// 		ways to create connection obj :
+		//1.getConnection(String url, String username, String password)
+//		String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
+//		String username = "postgres";
+//		String password = "tiger";
+		
+		Connection connection;
+		try {
+			//connection
+			//DriverManager is a class Used to Manage the data
+			//connection = DriverManager.getConnection(url,username,password);
+			
+			
+			//2.getConnection(String url)
+//          String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching?user=postgres&password=tiger";
+//          connection = DriverManager.getConnection(url);
+			
+			//3.getconnection(string url,Properties file)
+			String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
+			File file = new File("C:\\Users\\hp\\eclipse-workspace\\JDBC.BTR\\src\\main\\java\\cred\\jdbc.properties");
+			FileInputStream fis = new FileInputStream(file);
+			Properties pro = new Properties();
+			pro.load(fis);
+			connection = DriverManager.getConnection(url,pro);
+			//create statement
+			
+			
+			Statement statement = connection.createStatement();
+			String query = "select * from student";
+			//execute query
+			//execuite : Execuite statement  the query and return the boolean values weather the query is execuite or not
+			statement.execute(query); //DML & DDL
+			
+			//statement.execuiteQuery(query) : execuite the query and wrap the result in the form of result set
+			//execite the query and return the data in the form of resultset object 
+			ResultSet rs = statement.executeQuery(query); //
+			while(rs.next()) {
+				System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+				System.out.println(rs.getInt(1)+" "+rs.getString(2));
+			}
+			connection.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

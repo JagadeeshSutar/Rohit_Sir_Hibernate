@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="true"/>
+		<list key="replacehistory">
+			<item value="a6"/>
+			<item value="a5"/>
+			<item value="a4"/>
+			<item value="ManyStudent"/>
+			<item value="ManySubject"/>
+			<item value="javax"/>
+			<item value="jakarta"/>
+		</list>
+		<list key="findhistory">
+			<item value="a3"/>
+			<item value="a2"/>
+			<item value="a1"/>
+			<item value="Student"/>
+			<item value="Subject"/>
+			<item value="age"/>
+			<item value="jakarta"/>
+			<item value="jakar"/>
+			<item value="javax"/>
+		</list>
+	</section>
+</section>

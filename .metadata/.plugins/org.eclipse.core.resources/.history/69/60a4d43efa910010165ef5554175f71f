@@ -1,0 +1,54 @@
+package cred;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+//import java.sql.Statement;
+import java.util.Scanner;
+
+public class DynamicinputQuery {
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		try {
+			Class.forName("org.postgresql.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
+		String username = "postgres";
+		String password = "tiger";
+		
+		Connection connection;
+		try {
+			connection = DriverManager.getConnection(url,username,password);
+			//Statement statement = connection.createStatement();
+			String query = "insert into student values(?,?,?)";
+			PreparedStatement ps = connection.prepareStatement(query);
+			System.out.println("Enter the number of rows to be inserted : ");
+			int rows = sc.nextInt();
+			for(int i=0;i<rows;i++) {
+				System.out.println("Enter the Id : ");
+				int id = sc.nextInt();
+				System.out.println("Enter the Name : ");
+				sc.nextLine();
+				String name  = sc.nextLine();
+				System.out.println("Enter the Age");
+				int age = sc.nextInt();
+				
+				ps.setInt(1, id);
+				ps.setString(2, name);
+				ps.setInt(3, age);
+				
+				ps.execute();
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+

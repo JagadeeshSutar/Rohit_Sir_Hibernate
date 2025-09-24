@@ -1,0 +1,31 @@
+package annotations;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+public class SaveUser {
+	public static void main(String[] args) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("hiber_annotations");
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction et = em.getTransaction();
+		
+		
+		User u1 = new User();
+		u1.setName("Rohit");
+		
+		
+		User u2 = new User();
+		u2.setName("Rachit");
+		
+		et.begin();
+		em.persist(u2);
+		em.persist(u1);
+		et.commit();
+		
+		
+		
+		
+	}
+}

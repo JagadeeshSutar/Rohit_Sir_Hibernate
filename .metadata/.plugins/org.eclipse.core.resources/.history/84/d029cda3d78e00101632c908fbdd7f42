@@ -1,0 +1,9 @@
+package transactionmanagement;
+
+public class DemoPaymentGateway {
+
+	public static boolean isSuccess() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

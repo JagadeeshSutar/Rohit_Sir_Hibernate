@@ -1,0 +1,45 @@
+package transactionmanagement;
+
+import java.sql.*;
+
+public class MetaData {
+	public static void main(String[] args) {
+		try {
+			// 1. Load driver
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// 2. Establish connection
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "password");
+
+			// 3. Create statement
+			Statement st = con.createStatement();
+
+			// 4. Execute query
+			String sql = "SELECT * FROM teacher";
+			ResultSet res = st.executeQuery(sql);
+
+			// 5. Get metadata about ResultSet
+			ResultSetMetaData dmd = res.getMetaData();
+
+			// Column count
+			int colCount = dmd.getColumnCount();
+			System.out.println("Column count is: " + colCount);
+
+			// Third column name
+			String colName = dmd.getColumnName(3);
+			System.out.println("Third column name is: " + colName);
+
+			// Fourth column type
+			String type = dmd.getColumnTypeName(4);
+			System.out.println("Type of fourth column is: " + type);
+
+			// 6. Close resources
+			res.close();
+			st.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
