@@ -10,7 +10,7 @@ public class ResultSetMetaDataDemo {
     public static void main(String[] args) throws Exception {
         String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
         String user = "postgres";
-        String pass = "tiger";
+        String pass = "root";
 
         Class.forName("org.postgresql.Driver");
         Connection con = DriverManager.getConnection(url, user, pass); 

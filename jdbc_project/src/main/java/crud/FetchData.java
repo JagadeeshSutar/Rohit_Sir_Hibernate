@@ -37,7 +37,7 @@ public class FetchData {
 			
 			//3.getconnection(string url,Properties file)
 			String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
-			File file = new File("C:\\Users\\hp\\eclipse-workspace\\JDBC.BTR\\src\\main\\java\\cred\\jdbc.properties");
+			File file = new File("C:\\Users\\HP\\OneDrive\\Desktop\\Rohit_Sir_Hibernate\\jdbc_project\\src\\main\\java\\crud\\credentials.properties");
 			FileInputStream fis = new FileInputStream(file);
 			Properties pro = new Properties();
 			pro.load(fis);
@@ -56,7 +56,6 @@ public class FetchData {
 			ResultSet rs = statement.executeQuery(query); //
 			while(rs.next()) {
 				System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
-				System.out.println(rs.getInt(1)+" "+rs.getString(2));
 			}
 			connection.close();
 			

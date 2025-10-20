@@ -16,7 +16,7 @@ public class CreateTable {
 //		String url = "jdbc:postgresql://localhost:5431/JDBC_Coaching";
 		String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
 		String username = "postgres";
-		String password = "tiger";
+		String password = "root";
 		
 		Connection connection;
 		try {
@@ -24,7 +24,7 @@ public class CreateTable {
 			connection = DriverManager.getConnection(url,username,password);
 			//create statement
 			Statement statement = connection.createStatement();
-			String query = "create table student(id int,name varchar,age int)";
+			String query = "create table employee(id int,name varchar,age int)";
 //			String query = "insert into student values(1,'Ram',26)";	
 			//execute query
 			statement.execute(query);

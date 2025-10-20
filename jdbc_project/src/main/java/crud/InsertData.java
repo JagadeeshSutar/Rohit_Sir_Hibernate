@@ -24,7 +24,7 @@ public class InsertData {
 			connection = DriverManager.getConnection(url,username,password);
 			//create statement
 			Statement statement = connection.createStatement();
-			String query = "insert into student values(5,'Siva',20)";
+			String query = "insert into student values(8,'Sam',20,'Male')";
 //			String query = "insert into student values(1,'Ram',26)";	
 			//execute query
 			statement.execute(query);

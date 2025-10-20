@@ -10,7 +10,7 @@ public class TransactionManagement {
     public static void main(String[] args) {
         String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
         String user = "postgres";
-        String pass = "tiger";
+        String pass = "root";
 
         try {
             Class.forName("org.postgresql.Driver");
@@ -19,7 +19,7 @@ public class TransactionManagement {
 
             Statement st = c.createStatement();
 
-            String sqlBooking_info = "insert into booking_info values(10,'AIR INDIA','BLR','Spain')";
+            String sqlBooking_info = "insert into booking_info values(11,'AIR INDIA','BLR','Spain')";
             String sqlPassenger_info1 = "insert into passenger_info values(1,'NIKHIL',21,'MALE')";
             String sqlPassenger_info2 = "insert into passenger_info values(2,'KARAN',20,'MALE')";
             String sqlPassenger_info3 = "insert into passenger_info values(3,'SIVA',21,'MALE')";

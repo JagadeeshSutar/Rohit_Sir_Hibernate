@@ -9,7 +9,7 @@ public class BatchExecution {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
 		String username = "postgres";
-		String password = "tiger";
+		String password = "root";
 		
 		Class.forName("org.postgresql.Driver");
 		Connection c = DriverManager.getConnection(url,username,password);

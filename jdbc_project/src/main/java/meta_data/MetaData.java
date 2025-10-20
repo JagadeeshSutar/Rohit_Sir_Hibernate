@@ -9,7 +9,7 @@ public class MetaData {
 	public static void main(String[] args) throws SQLException {
 		String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
 		String user = "postgres";
-		String pass = "tiger";
+		String pass = "root";
 
 		try {
 			Class.forName("org.postgresql.Driver");

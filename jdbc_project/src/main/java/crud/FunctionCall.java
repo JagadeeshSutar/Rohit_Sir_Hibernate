@@ -10,7 +10,7 @@ public class FunctionCall {
 	public static void main(String[] args) throws SQLException {
 		String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
 		String user = "postgres";
-		String password = "tiger";
+		String password = "root";
 
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -34,3 +34,17 @@ public class FunctionCall {
 		}
 	}
 }
+
+
+//CREATE FUNCTION count_by_gender(gender_input VARCHAR)
+//RETURNS INTEGER AS $$
+//DECLARE
+//    total_count INTEGER;
+//BEGIN
+//    SELECT COUNT(*) INTO total_count
+//    FROM student   -- 👈 change this to your table name
+//    WHERE gender = gender_input;
+//
+//    RETURN total_count;
+//END;
+//$$ LANGUAGE plpgsql;

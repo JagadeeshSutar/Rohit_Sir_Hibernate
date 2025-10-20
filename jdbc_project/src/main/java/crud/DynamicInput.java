@@ -18,7 +18,7 @@ public class DynamicInput {
 		}
 		String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
 		String username = "postgres";
-		String password = "tiger";
+		String password = "root";
 		
 		Connection connection;
 		try {

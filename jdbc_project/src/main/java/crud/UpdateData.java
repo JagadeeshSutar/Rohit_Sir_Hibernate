@@ -24,7 +24,7 @@ public class UpdateData {
 			connection = DriverManager.getConnection(url,username,password);
 			//create statement
 			Statement statement = connection.createStatement();
-			String query = "update student set age=21 where id=5";
+			String query = "update student set age=21 where id=8";
 //			String query = "insert into student values(1,'Ram',26)";	
 			//execute query
 			statement.execute(query);

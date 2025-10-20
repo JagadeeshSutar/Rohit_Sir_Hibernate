@@ -9,7 +9,7 @@ public class StoredProcedure {
 	public static void main(String[] args) throws SQLException {
 		String url = "jdbc:postgresql://localhost:5432/JDBC_Coaching";
 		String user = "postgres";
-		String password = "tiger";
+		String password = "root";
 		try {
 			Class.forName("org.postgresql.Driver");
 			Connection c = DriverManager.getConnection(url,user,password);
@@ -32,3 +32,24 @@ public class StoredProcedure {
 		
 	}
 }
+//
+//CREATE OR REPLACE PROCEDURE create_teacher_records(
+//	    p_id INT,
+//	    p_name VARCHAR,
+//	    p_gender VARCHAR,
+//	    p_age INT,
+//	    p_email VARCHAR,
+//	    p_phone VARCHAR,
+//	    p_bloodgroup VARCHAR
+//	)
+//	LANGUAGE plpgsql
+//	AS $$
+//	BEGIN
+//	    INSERT INTO teacher (id, name, gender, age, email, phone, bloodgroup)
+//	    VALUES (p_id, p_name, p_gender, p_age, p_email, p_phone, p_bloodgroup);
+//	    
+//	    RAISE NOTICE 'Teacher record inserted successfully: %', p_name;
+//	END;
+//	$$;
+
+
