@@ -1,0 +1,31 @@
+# Eclipse workspace metadata and settings
+.metadata/
+.settings/
+*.log
+*.tmp
+*.bak
+
+# Eclipse specific caches and indexes
+*.index
+*.snap
+*.pma
+*.class
+
+# Maven / Gradle build folders
+target/
+bin/
+build/
+
+# Eclipse project files (optional, if you want to ignore them)
+*.project
+*.classpath
+
+# OS-specific files
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+
+# Other caches (WebView / EBWebView, etc.)
+*.cache
+*.data
